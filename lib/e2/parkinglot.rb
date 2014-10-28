@@ -1,16 +1,16 @@
 class ParkingLot
-  def initialize capacity
+  def initialize(capacity)
     @capacity = capacity
     @size = 0
     @lots = {}
   end
 
   def park(car)
-     if (@size + 1) <= @capacity
-       ticket = Ticket.new
-       @lots[ticket] = car
-       ticket
-     end
+    if (@size + 1) <= @capacity
+      ticket = Ticket.new
+      @lots[ticket] = car
+      ticket
+    end
   end
 
   def fetch(ticket)

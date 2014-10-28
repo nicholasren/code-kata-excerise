@@ -1,5 +1,4 @@
 class ParkingBoy
-
   def initialize(parkinglots)
     @parkinglots = parkinglots
   end
@@ -11,5 +10,4 @@ class ParkingBoy
 
     lot.nil? ? nil : lot.park(car)
   end
-
 end
