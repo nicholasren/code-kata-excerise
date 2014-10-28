@@ -10,4 +10,8 @@ class ParkingBoy
 
     lot.nil? ? nil : lot.park(car)
   end
+
+  def fetch(ticket)
+    @parkinglots.map{ |lot| lot.fetch(ticket) }.find{ |car| !car.nil? }
+  end
 end
