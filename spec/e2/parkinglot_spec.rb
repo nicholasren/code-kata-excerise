@@ -39,7 +39,7 @@ describe ParkingLot do
       end
 
       context 'fake ticket' do
-        let(:ticket) {  Ticket.new }
+        let(:ticket) {  Ticket.new(double(Car)) }
 
         specify { expect(subject).to be_nil }
       end

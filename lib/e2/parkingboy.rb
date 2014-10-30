@@ -4,10 +4,7 @@ class ParkingBoy
   end
 
   def park(car)
-    lot = @parkinglots.find do |lot|
-      lot.available_lots > 0
-    end
-
+    lot = @parkinglots.find { |lot| lot.available_lots > 0 }
     lot.nil? ? nil : lot.park(car)
   end
 

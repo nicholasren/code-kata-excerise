@@ -1,13 +1,12 @@
 class ParkingLot
   def initialize(capacity)
     @capacity = capacity
-    @size = 0
     @lots = {}
   end
 
   def park(car)
-    if (@size + 1) <= @capacity
-      ticket = Ticket.new
+    if parkable?
+      ticket = Ticket.new(self)
       @lots[ticket] = car
       ticket
     end
@@ -18,6 +17,10 @@ class ParkingLot
   end
 
   def available_lots
-    @capacity - @size
+    @capacity - @lots.size
+  end
+
+  def parkable?
+    available_lots > 0
   end
 end
